@@ -87,4 +87,4 @@ stages:
               appName: 'ademdeploy'
               package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
               runtimeStack: 'PYTHON|3.11'
-              startUpCommand: 'bokeh serve'
+              startUpCommand: 'python -m bokeh serve app.py --port 8000 --address 0.0.0.0 --unused-session-lifetime 5000 --check-unused-sessions 5000 --allow-websocket-origin=ademdeploy.azurewebsites.net'
