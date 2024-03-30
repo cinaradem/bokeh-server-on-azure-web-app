@@ -82,6 +82,9 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App'
             inputs:
-              azureSubscription: $(azureServiceConnectionId)
-              appName: $(webAppName)
-              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
+              azureSubscription: 'Startups Founders Hub Devbase(c034707c-7441-457a-8090-606a0f13a7db)'
+              appType: 'webAppLinux'
+              appName: 'ademdeploy'
+              package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+              runtimeStack: 'PYTHON|3.11'
+              startUpCommand: 'bokeh serve'
